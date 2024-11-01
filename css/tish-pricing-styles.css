@@ -1,0 +1,161 @@
+/* Base styling for the pricing table container */
+.tish-pricing-table-pro {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+/* Styling for each individual plan */
+.plan {
+    position: relative;
+    flex: 1;
+    max-width: 300px;
+    margin: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    height: fit-content;
+}
+
+.plan:hover {
+    transform: translateY(-10px);
+}
+
+/* Feature image styling */
+#tish-pricing-table-pro .plan-feature-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Plan title styling */
+.plan-title {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Plan price styling */
+.plan-price {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff4500;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Plan features list styling */
+
+.plan-features {
+    padding: 10px 5%;
+    text-align: center;
+}
+
+.plan-features li:last-child {
+    border-bottom: none;
+}
+
+/* Purchase button styling */
+#tish-pricing-table-pro .plan-purchase-btn {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #ff4500;
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 0 0 10px 10px;
+    transition: background-color 0.3s;
+}
+
+#tish-pricing-table-pro .plan-purchase-btn:hover {
+    background-color: #ff6347;
+}
+
+/* Styling for popular plan */
+.plan.popular {
+    z-index: 2;
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Badge styling */
+.plan-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #ff4500;
+    color: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 767px) { /* Mobile devices */
+    .tish-pricing-table-pro {
+        flex-direction: column;
+        align-items: center;
+    }
+    .plan {
+        max-width: 90%; /* Reduced to 90% to allow for margins */
+        margin: 10px 5% 30px 5%; /* Added 5% margin on left and right to center the box and provide spacing */
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) { /* Tablets */
+    .tish-pricing-table-pro {
+        flex-wrap: wrap;
+    }
+    .plan {
+        flex: 0 0 45%; /* This will make sure two plans fit in a row with a little space in between */
+        margin: 20px 2.5%; /* Increased vertical margin for more spacing between rows */
+    }
+}
+
+.tooltip-icon {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5px;
+    background-color: #333;
+    color: #fff;
+    width: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+}
+
+.tooltip-icon:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    max-width: 300px;
+    white-space: normal;
+}
